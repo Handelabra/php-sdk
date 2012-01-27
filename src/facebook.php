@@ -34,7 +34,8 @@ class Facebook extends BaseFacebook
    */
   public function __construct($config) {
     if (!session_id()) {
-      session_start();
+      // Don't do this, it breaks CakePHP's ACL. Bad Facebook. Bad.
+      //session_start();
     }
     parent::__construct($config);
   }
